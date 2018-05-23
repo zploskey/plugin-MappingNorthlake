@@ -10,9 +10,6 @@ define('MAPPING_NORTHLAKE_DIR', dirname(__FILE__));
  */
 class MappingNorthlakePlugin extends Omeka_Plugin_AbstractPlugin
 {
-    protected $_hooks = array(
-        'public_home',
-    );
 
     protected $_filters = array(
         'items_browse_default_sort',
@@ -21,13 +18,6 @@ class MappingNorthlakePlugin extends Omeka_Plugin_AbstractPlugin
     );
 
     protected $_recordTitleSort = array('Dublin Core,Title', 'ASC');
-
-
-    public function hookPublicHome($args)
-    {
-        $view = $args['view'];
-        // maybe do $view->partial('index/tiled_nav.php');
-    }
 
     /**
      * Sort Item browsing results by Title by default.
