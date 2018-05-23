@@ -1,0 +1,7 @@
+{
+    "name": "zploskey/plugin-MappingNorthlake",
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.0",
+    },
+    "require": {}
+}
