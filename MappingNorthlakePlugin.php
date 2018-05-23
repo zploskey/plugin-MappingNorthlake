@@ -6,7 +6,7 @@
 define('MAPPING_NORTHLAKE_DIR', dirname(__FILE__));
 
 /**
- * Experimental Beijing plugin main class.
+ * Mapping Northlake plugin main class.
  */
 class MappingNorthlakePlugin extends Omeka_Plugin_AbstractPlugin
 {
