@@ -15,6 +15,7 @@ class MappingNorthlakePlugin extends Omeka_Plugin_AbstractPlugin
         'collections_browse_default_sort',
         'exhibits_browse_default_sort',
         'items_browse_default_sort',
+        'items_browse_params',
         'neatline_exhibits_browse_params',
     );
 
@@ -51,6 +52,22 @@ class MappingNorthlakePlugin extends Omeka_Plugin_AbstractPlugin
     public function filterExhibitsBrowseDefaultSort($sortArray, $args)
     {
         return array('title', 'ASC');
+    }
+
+    /**
+     * Sort Items by Dublin Core Title by default. This makes items sort
+     * properly on the collections/show page.
+     *
+     * @param Array $params
+     * @return Array
+     */
+    public function filterItemsBrowseParams($params)
+    {
+        if (!isset($params['sort_field'])) {
+            $params['sort_field'] = 'Dublin Core,Title';
+            $params['sort_dir'] = 'a';
+        }
+        return $params;
     }
 
     /**
